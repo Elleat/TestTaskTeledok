@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TestTaskTeledokCore.Models;
-using TestTaskTeledokCore.ModelsTest;
 
 namespace TestTaskTeledokInfrastructure.Data
 {
@@ -59,53 +58,3 @@ namespace TestTaskTeledokInfrastructure.Data
         }
     }
 }
-
-/* ТЕСТОВОЕ
- * public DbSet<Blog> Blogs { get; set; }
-        public DbSet<BlogSettings> BlogSettings { get; set; }
-        public DbSet <Post> posts { get; set; }
-        public DbSet<Tag> tags { get; set; }
-        modelBuilder.ApplyConfiguration(new BlogConfiguration());
-            modelBuilder.ApplyConfiguration(new BlogSettingsConfiguration());
-            modelBuilder.ApplyConfiguration(new PostsConfiguration());
-            modelBuilder.ApplyConfiguration(new TagConfiguration());
-        public class BlogConfiguration : IEntityTypeConfiguration<Blog>
-        {
-            public void Configure(EntityTypeBuilder<Blog> builder)
-            {
-                builder.HasKey(x => x.Id);
-                builder.HasOne(x => x.BlogSettings)
-                    .WithOne(x => x.Blog)
-                    .HasForeignKey<BlogSettings>(x => x.Blogid);
-                builder.HasMany(x => x.Posts)
-                    .WithOne(x => x.Blog)
-                    .HasForeignKey(x => x.BlogId);
-            }
-        }
-
-        public class BlogSettingsConfiguration : IEntityTypeConfiguration<BlogSettings>
-        {
-            public void Configure(EntityTypeBuilder<BlogSettings> builder)
-            {
-                builder.HasKey(x=>x.Id);
-            }
-        }
-        public class PostsConfiguration : IEntityTypeConfiguration<Post>
-        {
-                public void Configure(EntityTypeBuilder<Post> builder)
-            {
-                builder.HasKey(x=>x.Id);
-                builder.HasMany(x=>x.Tags)
-                    .WithMany(x => x.Posts);
-            }
-        }
-        public class TagConfiguration : IEntityTypeConfiguration<Tag>
-        {
-            public void Configure(EntityTypeBuilder<Tag> builder)
-            {
-                builder.HasKey(x=>x.Id);
-            }
-        }
-
-
-        // ТЕСТОВОЕ */

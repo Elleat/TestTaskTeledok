@@ -32,8 +32,5 @@ namespace TestTaskTeledokCore.Models
         public DateTime ДатаОбновления { get; set; }
 
         public ClientsFounders Учредители { get; set; }
-        //public List<Course> Courses { get; set; } = new List<Course>();
-        /*[ForeignKey("ИНН")]
- public ICollection<Founders> Founders { get; set; } */
     }
 }
