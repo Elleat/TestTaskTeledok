@@ -1,0 +1,59 @@
+﻿@model IEnumerable<TestTaskTeledokCore.Models.Clients>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Наименование)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ЮЛИП)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ДатаСоздания)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ДатаОбновления)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Учредители)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ЮЛИП)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ДатаСоздания)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ДатаОбновления)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Учредители)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ИНН">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ИНН">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ИНН">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
